@@ -1,0 +1,87 @@
+ZSH_THEME="fishy"
+
+export EDITOR='vi'
+
+function code {
+  if [[ $1 = 0 ]]
+  then
+    open -a "Visual Studio Code"
+  else
+    local argPath="$1"
+    [[ $1 = /* ]] && argPath="$1" || argPath="$PWD/${1#./}"
+    open -a "Visual Studio Code" "$argPath"
+  fi
+}
+
+export PAGER='less -f'
+
+# export PS1='$FG[000]< $FG[022]%(3~|%-1~/.../%1~|%4~)$FG[000] /> %{$reset_color%}${ret_status}%{$reset_color%}'
+local prompt_inner="%(?:%{$fg_bold[green]%}%(3~|%-1~/.../%1~|%4~):%{$fg_bold[red]%}%(3~|%-1~/.../%1~|%4~))"
+export PS1='$FG[000]< ${prompt_inner}%b$FG[000] /> %{$reset_color%}${ret_status}%{$reset_color%}'
+
+alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+alias android="open -a 'Android Studio'"
+alias xopen="open -a 'XCode'"
+alias nom="npm"
+alias nmp="npm"
+alias got="git"
+alias gaa="git add --all"
+
+function gcreate {
+    if [[ $1 != "" ]]
+    then
+        git init
+        git add .
+        git commit -m "Initial commit"
+        curl -u 'HarrisonBooth' https://api.github.com/user/repos -d '{"name":"'$1'"}'
+        git remote add origin git@github.com:HarrisonBooth/$1.git
+        git push origin master
+    else
+        echo "Please provide a name for your new git repo"
+        echo "e.g. gcreate MyNewRepo"
+    fi
+}
+
+function webpackConfig {
+  touch webpack.config.js
+  CONFIG=$(curl https://gist.githubusercontent.com/harrisonbooth/1534d245d92cff799581438f58dae978/raw/0efea10ddcb40fdf2d7932a7fdc25112bd94a04b/webpack.config.js)
+  echo $CONFIG >> webpack.config.js
+
+  mkdir build
+
+  touch build/index.html
+  HTML_BOILER_PLATE=$(curl https://gist.githubusercontent.com/harrisonbooth/b683def8d08717bb91166bb7d401d2ce/raw/d980e191c07973c7f79251eaee97a8e36c787677/boiler.html)
+  echo $HTML_BOILER_PLATE >> build/index.html
+
+  mkdir src
+  touch src/app.js
+}
+
+function reactStart {
+  if [ $1 != "" ]
+  then
+    mkdir $1
+    cd $1
+    npm init -y
+    npm i --save react react-dom prop-types
+    npm i --save-dev webpack babel-core babel-loader babel-preset-react babel-preset-es2015 babel-plugin-transform-object-rest-spread
+    webpackConfig
+  else
+    echo "Please provide a name for your top level folder, you idiot."
+  fi
+}
+
+alias gst="git status"
+alias macdown='open -a "MacDown"'
+alias iamteaching='source ~/.zshrc_teaching'
+
+E15="/Users/user/codeclan/cohorts/cohort_e15"
+
+function cohort {
+  if [ "$1" != "" ]
+  then
+    cd "/Users/user/codeclan/cohorts/cohort_$1"
+  else
+    cd "/Users/user/codeclan/cohorts"
+  fi
+}
