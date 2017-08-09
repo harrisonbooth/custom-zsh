@@ -13,6 +13,8 @@ function code {
   fi
 }
 
+export LSCOLORS=Cxfxcxdxbxegedabagacad
+
 export PAGER='less -f'
 
 # export PS1='$FG[000]< $FG[022]%(3~|%-1~/.../%1~|%4~)$FG[000] /> %{$reset_color%}${ret_status}%{$reset_color%}'
