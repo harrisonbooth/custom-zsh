@@ -74,6 +74,7 @@ function reactStart {
 alias gst="git status"
 alias macdown='open -a "MacDown"'
 alias iamteaching='source ~/.zshrc_teaching'
+alias l="ls"
 
 E15="/Users/user/codeclan/cohorts/cohort_e15"
 
@@ -83,5 +84,14 @@ function cohort {
     cd "/Users/user/codeclan/cohorts/cohort_$1"
   else
     cd "/Users/user/codeclan/cohorts"
+  fi
+}
+
+function course {
+  if [ "$1" != "" ]
+  then
+    cd "/Users/user/codeclan/courses/course_$1"
+  else
+    cd "/Users/user/codeclan/courses"
   fi
 }
