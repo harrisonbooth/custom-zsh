@@ -76,6 +76,7 @@ function reactStart {
 alias gst="git status"
 alias macdown='open -a "MacDown"'
 alias iamteaching='source ~/.zshrc_teaching'
+alias l='ls'
 
 E15="/Users/user/codeclan/cohorts/cohort_e15"
 
