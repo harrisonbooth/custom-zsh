@@ -13,7 +13,7 @@ function code {
   fi
 }
 
-export LSCOLORS=Cxfxcxdxbxegedabagacad
+export LSCOLORS=Exfxcxdxbxegedabagacad
 
 export PAGER='less -f'
 
