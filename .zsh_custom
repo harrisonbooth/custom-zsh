@@ -88,6 +88,20 @@ function gcreate {
     fi
 }
 
+# 2.4 Creating a 5 day week
+# Create a folder with the prefix `w` then a suffix decided by a parameter, then within that creates `d1` through `d5` 
+# folders within it.
+#
+# $1 - suffix for parent (`w`) folder
+#
+# Example
+# `mkweek 4`
+# Will create a `w4` folder, and within that will create `d1`, `d2`, `d3`, `d4`, `d5` folders.
+#
+function mkweek {
+  mkdir -p w$1/d1/../d2/../d3/../d4/../d5
+}
+
 
 # 3 PROMPT
 
