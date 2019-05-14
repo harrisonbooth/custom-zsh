@@ -1,3 +1,5 @@
+#! /bin/sh
+
 # 0 MISC
 # 0.1 Set ZSH theme to fishy
 ZSH_THEME="fishy"
@@ -100,6 +102,28 @@ function gcreate {
 #
 function mkweek {
   mkdir -p w$1/d1/../d2/../d3/../d4/../d5
+}
+
+# 2.5 Creating a cohort week folder structure
+# Creates a set of folders to reflect the weeks in the Codeclan course - folders named `w${number}` with number going
+# from 01 to 16 - with `d1`, `d2`, `d3`, `d4`, and `d5` folders in each.
+# 
+# Example
+# `mkcohort`
+# Will create 16 folders, `w01` to `w16`, and within each `d1`, `d2`, `d3`, `d4`, and `d5` folders.
+# 
+function mkcohort {
+  for i in {1..16..1}
+  do
+    if [ $i -lt 10 ]
+      then
+      mkweek 0$i
+    fi 
+    if [ $i -ge 10 ]
+      then
+      mkweek $i
+    fi 
+  done
 }
 
 
