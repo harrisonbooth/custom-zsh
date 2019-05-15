@@ -130,9 +130,9 @@ function mkcohort {
 # 3 PROMPT
 
 # 3.1 Left Prompt
-local prompt_inner="%(?:%{$fg_bold[green]%}%(3~|%-1~/.../%1~|%4~):%{$fg_bold[red]%}%(3~|%-1~/.../%1~|%4~))"
+local prompt_inner="%(?:%{$fg_bold[blue]%}%(3~|%-1~/.../%1~|%4~):%{$fg_bold[red]%}%(3~|%-1~/.../%1~|%4~))"
 PROMPT='$FG[000]< ${prompt_inner}%b$FG[000] /> ' # `< ~/.../current_folder />`
-# NOTE: If preceeding command was successful path appears green, if not - red.
+# NOTE: If preceeding command was successful path appears blue, if not - red.
 
 # 3.2 Right Prompt (Git Information)
 # 3.2.1 Set format of right prompt
@@ -154,8 +154,8 @@ ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[cyan]%}?"  # Untracked Files(s): - `?
 
 
 # 4 LS COLORS
-# directory: ------------------------------------- Ex [bold blue]
-# symbolic link: --------------------------------- fx [magenta]
+# directory: ------------------------------------- Fx [bold magenta]
+# symbolic link: --------------------------------- fx [light grey with magenta bg]
 # socket: ---------------------------------------- cx [green]
 # pipe: ------------------------------------------ dx [brown]
 # executable: ------------------------------------ bx [red]
@@ -166,7 +166,7 @@ ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[cyan]%}?"  # Untracked Files(s): - `?
 # directory writable to others, with sticky bit: - ac [black with green bg]
 # directory writable to others, without sticky: -- ad [black with brown bg]
 
-export LSCOLORS=Exfxcxdxbxegedabagacad
+export LSCOLORS=Fxhfcxdxbxegedabagacad
 
 # NOTE: below are the colour values and rules
 # Colour values 
