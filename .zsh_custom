@@ -12,9 +12,9 @@ export EDITOR='vi'
 alias nom="npm"
 alias nmp="npm"
 alias got="git"
-alias gaa="git add --all"
 
 # 1.2 Shortening
+alias gaa="git add --all"
 alias gst="git status"
 alias l='ls'
 
@@ -150,7 +150,7 @@ ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg_bold[blue]%}!"   # Modified file(s): --- `!
 ZSH_THEME_GIT_PROMPT_DELETED="%{$fg_bold[red]%}-"     # Deleted file(s): ---- `-` [red]
 ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg_bold[magenta]%}>" # Renamed File(s): ---- `>` [magenta]
 ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg_bold[yellow]%}#" # Unmerged File(s): --- `#` [yellow]
-ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[cyan]%}?"  # Untracker Files(s): - `?` [cyan]
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[cyan]%}?"  # Untracked Files(s): - `?` [cyan]
 
 
 # 4 LS COLORS
