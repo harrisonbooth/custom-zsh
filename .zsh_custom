@@ -137,7 +137,9 @@ function mkcohort {
 #
 function runbg {
   mkdir -p logs
-  $@ &> logs/background.log &
+  echo $*
+  param_str=$*
+  $@ &> logs/${param_str// /_}.log &
 }
 
 # 3 PROMPT
