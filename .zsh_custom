@@ -91,7 +91,7 @@ function gcreate {
 }
 
 # 2.4 Creating a 5 day week
-# Create a folder with the prefix `w` then a suffix decided by a parameter, then within that creates `d1` through `d5` 
+# Create a folder with the prefix `w` then a suffix decided by a parameter, then within that creates `d1` through `d5`
 # folders within it.
 #
 # $1 - suffix for parent (`w`) folder
@@ -107,25 +107,38 @@ function mkweek {
 # 2.5 Creating a cohort week folder structure
 # Creates a set of folders to reflect the weeks in the Codeclan course - folders named `w${number}` with number going
 # from 01 to 16 - with `d1`, `d2`, `d3`, `d4`, and `d5` folders in each.
-# 
+#
 # Example
 # `mkcohort`
 # Will create 16 folders, `w01` to `w16`, and within each `d1`, `d2`, `d3`, `d4`, and `d5` folders.
-# 
+#
 function mkcohort {
   for i in {1..16..1}
   do
     if [ $i -lt 10 ]
       then
       mkweek 0$i
-    fi 
+    fi
     if [ $i -ge 10 ]
       then
       mkweek $i
-    fi 
+    fi
   done
 }
 
+# 2.6 Running a process in the background
+# Runs a process in the background, putting it in the jobs list for the current terminal instance.
+#
+# $1 - command/process to be run the background
+#
+# Example
+# 'runbg ionic serve'
+# Will run `ionic serve` in the background of the terminal window as a job.
+#
+function runbg {
+  mkdir -p logs
+  $@ &> logs/background.log &
+}
 
 # 3 PROMPT
 
@@ -169,7 +182,7 @@ ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[cyan]%}?"  # Untracked Files(s): - `?
 export LSCOLORS=Fxhfcxdxbxegedabagacad
 
 # NOTE: below are the colour values and rules
-# Colour values 
+# Colour values
 #   - a black
 #   - b red
 #   - c green
