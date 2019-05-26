@@ -17,6 +17,7 @@ alias got="git"
 alias gaa="git add --all"
 alias gst="git status"
 alias l='ls'
+alias glg='git log --oneline --decorate --color' 
 
 # 1.3 System Convenience
 alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
