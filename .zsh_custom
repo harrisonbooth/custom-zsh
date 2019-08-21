@@ -146,7 +146,7 @@ function runbg {
 
 # 3.1 Left Prompt
 local prompt_inner="%(?:%{$fg_bold[blue]%}%(3~|%-1~/.../%1~|%4~):%{$fg_bold[red]%}%(3~|%-1~/.../%1~|%4~))"
-PROMPT='$FG[000]< ${prompt_inner}%b$FG[000] /> ' # `< ~/.../current_folder />`
+PROMPT='%{$reset_color%}< ${prompt_inner}%b%{$reset_color%} /> ' # `< ~/.../current_folder />`
 # NOTE: If preceeding command was successful path appears blue, if not - red.
 
 # 3.2 Right Prompt (Git Information)
