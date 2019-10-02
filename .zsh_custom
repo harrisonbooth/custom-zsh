@@ -17,7 +17,7 @@ alias got="git"
 alias gaa="git add --all"
 alias gst="git status"
 alias l='ls'
-alias glg='git log --oneline --decorate --color' 
+alias glg='git log --oneline --decorate --color'
 
 # 1.3 System Convenience
 alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
@@ -34,16 +34,16 @@ alias xopen="open -a 'XCode'"
 # `code ~/projects/coding_thing`
 # Will open a VS Code workspace with the `~/projects/coding_thing` directory open as the current project.
 #
-function code {
-  if [[ $1 = 0 ]]
-  then
-    open -a "Visual Studio Code"
-  else
-    local argPath="$1"
-    [[ $1 = /* ]] && argPath="$1" || argPath="$PWD/${1#./}"
-    open -a "Visual Studio Code" "$argPath"
-  fi
-}
+# function code {
+#   if [[ $1 = 0 ]]
+#   then
+#     open -a "Visual Studio Code"
+#   else
+#     local argPath="$1"
+#     [[ $1 = /* ]] && argPath="$1" || argPath="$PWD/${1#./}"
+#     open -a "Visual Studio Code" "$argPath"
+#   fi
+# }
 
 # 2.2 Navigating to cohort folders
 # Navigates to the directery of a cohort in a specific location.
